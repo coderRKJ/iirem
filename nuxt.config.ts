@@ -1,4 +1,8 @@
 export default defineNuxtConfig({
+  app: {
+    baseURL: '/iirem/'
+  },
+
   // https://github.com/nuxt-themes/alpine
   extends: '@nuxt-themes/alpine',
 
