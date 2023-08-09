@@ -3,6 +3,8 @@ export default defineNuxtConfig({
     baseURL: '/iirem/'
   },
 
+  css: ['~/assets/styles/main.scss'],
+
   // https://github.com/nuxt-themes/alpine
   extends: '@nuxt-themes/alpine',
 
