@@ -1,0 +1,46 @@
+<script setup lang="ts">
+const alpine = useAppConfig().alpine
+
+defineProps({
+  padded: {
+    type: Boolean,
+    default: true
+  }
+})
+
+useHead({
+  meta: [
+    { name: 'twitter:card', content: 'summary_large_image' }
+  ]
+})
+
+useContentHead(alpine as any)
+</script>
+
+<template>
+  <Container class="app-layout">
+    <AppLoadingBar />
+    <AppHeader v-if="alpine.header" />
+    <slot />
+    <AppFooter v-if="alpine.footer" />
+  </Container>
+</template>
+
+<style lang="ts">
+css({
+  '.app-layout': {
+    minWidth: '{size.xs}'
+  },
+  'h2>a': {
+    textDecoration: 'none',
+    backgroundImage: 'linear-gradient(to right, currentColor 50%, transparent 50%)',
+    backgroundSize: '200% 3px',
+    backgroundRepeat: 'no-repeat',
+    backgroundPosition: '100% 100%',
+    transition: 'background-position .3s'
+  },
+  'h2>a:hover': {
+    backgroundPosition: '0% 100%'
+  }
+})
+</style>

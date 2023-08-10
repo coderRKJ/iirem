@@ -85,6 +85,8 @@ css({
   article: {
     display: 'flex',
     flexDirection: 'column',
+    alignItems: 'flex-start',
+    alignContent: 'flex-start',
     gap: '{space.4}',
     '&.featured': {
       '@md': {
@@ -99,10 +101,14 @@ css({
       borderRadius: '{radii.md}',
     },
     '.image': {
+      alignItems: 'flex-start',
+      alignContent: 'flex-start',
       flex: 1,
       div: {
         position: 'absolute',
         display: 'flex',
+        alignItems: 'flex-start',
+        alignContent: 'flex-start',
         flexWrap: true,
         gap: '{space.2}',
         marginTop: '{space.2}',
@@ -118,6 +124,8 @@ css({
     '.content': {
       display: 'flex',
       flexDirection: 'column',
+      alignItems: 'flex-start',
+      alignContent: 'flex-start',
       flex: 1,
       '.headline': {
         text: '2xl',
@@ -132,8 +140,19 @@ css({
       '.description': {
         marginBottom: '{space.4}',
         lineClamp: 2,
+        maxHeight: '3em',
+        transition: 'all 0.6s ease-in-out',
         '.featured &&': {
-          lineClamp: 4,
+          lineClamp: 40,
+          maxHeight: '40em'
+        },
+        ':hover &&': {
+          lineClamp: 40,
+          maxHeight: '40em'
+        },
+        ':focus &&': {
+          lineClamp: 40,
+          maxHeight: '40em'
         }
       },
       time: {
@@ -145,6 +164,17 @@ css({
         }
       }
     },
+    '.headline>h1': {
+      textDecoration: 'none',
+      backgroundImage: 'linear-gradient(to right, currentColor 50%, transparent 50%)',
+      backgroundSize: '200% 3px',
+      backgroundRepeat: 'no-repeat',
+      backgroundPosition: '100% 100%',
+      transition: 'background-position .3s',
+      ':hover &&': {
+        backgroundPosition: '0% 100%'
+      }
   }
+    }
 })
 </style>
