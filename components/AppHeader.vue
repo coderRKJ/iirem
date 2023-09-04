@@ -50,6 +50,7 @@ css({
     '--header-padding': '{space.2}',
     '--logo-height': '{space.12}',
     position: 'fixed',
+    zIndex: 100,
     padding: '{space.4}',
     backgroundColor: '{alpine.backdrop.backgroundColor}',
     backdropFilter: 'blur(20px)',
