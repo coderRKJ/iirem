@@ -18,16 +18,23 @@ useContentHead(alpine as any)
 </script>
 
 <template>
-  <Container class="app-layout">
+  <div class="app-layout">
     <AppLoadingBar />
     <AppHeader v-if="alpine.header" />
+    <div class="spacer" />
     <slot />
-    <AppFooter v-if="alpine.footer" />
-  </Container>
+    <AppFooter v-if="alpine.footer"  class="footer" />
+  </div>
 </template>
 
 <style lang="ts">
 css({
+  '.footer': {
+    marginInline: '{space.8}'
+  },
+  'div.spacer': {
+    minHeight: '{space.16}',
+  },
   '.app-layout': {
     minWidth: '{size.xs}'
   },
