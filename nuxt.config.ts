@@ -1,7 +1,4 @@
 export default defineNuxtConfig({
-  app: {
-    baseURL: '/iirem/'
-  },
 
   css: ['~/assets/styles/main.scss'],
 
